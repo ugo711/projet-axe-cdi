@@ -1,0 +1,60 @@
+#character{
+    position: relative;
+    height: 36rem;
+    width: 27rem;
+    margin: 2rem 1rem;
+    background-image: url(../img/carte.jpg);
+    background-size: cover;
+    border-radius: 30px;    
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+}
+#character img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#character h1{
+    width: 90%;
+    height: 12%;
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 10px;
+}
+#character_container{
+    display: flex;  
+    align-items: center;
+    justify-content: space-evenly;
+}
+#info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(195, 187, 104, 0.829);
+}
+body{
+    background-image: url(../img/fond.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a{
+    color: white;
+}
+
+#dp {
+    overflow: hidden;
+    height: 80%;
+    object-fit: cover;
+}
+
