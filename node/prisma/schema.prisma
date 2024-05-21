@@ -29,3 +29,9 @@ model Post {
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
 }
+
+model Card {
+  id Int @id @default(autoincrement())
+  name String
+  house String
+}

@@ -15,6 +15,7 @@ formulaire.addEventListener("submit", async (event) => {
     const token = data.token;
 
     localStorage.setItem("token", token);
+    open(hp.html);
 });
 
 const getMyProfile = async () => {

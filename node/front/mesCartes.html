@@ -4,25 +4,24 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="css/single.css" />
     </head>
     <body>
+        <link rel="stylesheet" href="css/single.css" />
         <nav>
             <a href="hp.html">Acceuil</a>
             <a href="mesCartes.html">Mes cartes</a>
             <a href="booster.html">Booster</a>
         </nav>
-        <div id="character_container"></div>
+        <div id="character"></div>
         <script>
-            function fetchCharacter() {
-                let url = window.location.search;
-                let slug = new URLSearchParams(url).get("slug");
+            let mesCartes = ["draco-malfoy", "harry-potter"];
+            function fetchCharacter(slug) {
                 return fetch(
                     "https://hp-api.lainocs.fr/characters/" + slug
                 ).then((response) => response.json());
             }
-            async function displayCharacter() {
-                const data = await fetchCharacter();
+            async function displayCharacter(slug) {
+                const data = await fetchCharacter(slug);
                 console.log(data);
                 document.querySelector("#character_container").innerHTML = `
                 <div id="character">
@@ -41,7 +40,9 @@
                     </div>
                 `;
             }
-            displayCharacter();
+            for (let i = 0; i < mesCartes.length; i++) {
+                displayCharacters(mesCartes[i]);
+            }
         </script>
     </body>
 </html>

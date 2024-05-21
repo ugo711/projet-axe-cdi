@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div id="character"></div>
-    <script>
-        function fetchCharacters(){
-            return fetch('https://hp-api.lainocs.fr/characters')
-            .then((response) => response.json())
-        }
-        async function displayCharacters(){
-            const data = await fetchCharacters()
-            console.log(data)
-            data.forEach(character => {
-                document.querySelector('#character').innerHTML += `
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <nav>
+            <a href="hp.html">Acceuil</a>
+            <a href="mesCartes.html">Mes cartes</a>
+            <a href="booster.html">Booster</a>
+        </nav>
+        <div id="character"></div>
+        <script>
+            function fetchCharacters() {
+                return fetch("https://hp-api.lainocs.fr/characters").then(
+                    (response) => response.json()
+                );
+            }
+            async function displayCharacters() {
+                const data = await fetchCharacters();
+                console.log(data);
+                data.forEach((character) => {
+                    document.querySelector("#character").innerHTML += `
                 <a href="single_hp.html?slug=${character.slug}" >    
                     <div class="character">
                         <h2>${character.name}</h2>
@@ -25,11 +31,10 @@
                     </div>
                 </a>
                 
-                `
-            });
-            
-        }
-        displayCharacters()
+                `;
+                });
+            }
+            displayCharacters();
         </script>
     </body>
 </html>
